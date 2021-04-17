@@ -59,14 +59,13 @@ int readFile(product *p){
     }
     for(i=0;i<100;i++){
 
+        if (feof(fp)) break;
         fscanf(fp," %[^\n]",p[i].name);
         fscanf(fp,"%d %d %d %d",&p[i].gram,&p[i].price,&p[i].star,&p[i].num_star);
-        if (feof(fp)) break;
     }
 
     fclose(fp);
-    printf("=> 로딩성공!\n");
-
+    printf("=> 로딩성공!%d\n",i);
     return i;
 }
 

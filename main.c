@@ -8,7 +8,7 @@ int main(){
 	
         product p[100];
         int index=readFile(p);
-        int count=0;
+        int count=index;
 	int menu,num;
 	char ch;
 	while(1){
