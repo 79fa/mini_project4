@@ -116,7 +116,7 @@ void searchstar(product *p,int count){
 
         }
     }
-    if (count==0) printf("검색된 데이터 없음");
+    if (n==0) printf("검색된 데이터 없음");
 }
 void searchprice(product *p,int count){
 	int i;
@@ -134,7 +134,7 @@ void searchprice(product *p,int count){
 
         }
     }
-    if (count==0) printf("검색된 데이터 없음");
+    if (n==0) printf("검색된 데이터 없음");
 }
 
 	
