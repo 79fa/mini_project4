@@ -73,14 +73,33 @@ void savedata(product *p,int count){
     	FILE *fp;
     	fp=fopen("product.txt","wt");
 
-    for(i=0;i<n;i++){
+    for(i=0;i<count;i++){
         if (p[i].gram!=-1){
             fprintf(fp,"%s %d %d %d %d %d\n",p[i].name,p[i].gram,p[i].price,p[i].star,p[i].num_star);
         }
     }
     fclose(fp);
 }	
-	
+void searchname(product *p[],int count){
+    int i;
+    char na[100];
+    printf("검색할 이름?");
+    scanf("%s",na);
+
+    int n=0;
+    for(i=0;i<count;i++){
+        if(p[i].price==-1) continue;
+        if(strstr(p[i].name,na)){
+            printf("%2d",i+1);
+            readMenu(p[i]);
+            n++;
+
+        }
+    }
+    if (count==0) printf("검색된 데이터 없음");
+
+}
+
 	
 	
 	//입력된 값들을 파일에 저장한다.
