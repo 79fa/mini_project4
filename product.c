@@ -54,7 +54,7 @@ int readFile(product *p){
 
     fp=fopen("product.txt","rt");
     if(fp==NULL){
-        printf("파일없음");
+        printf("파일없음\n");
         return 0;
     }
     for(i=0;i<100;i++){
