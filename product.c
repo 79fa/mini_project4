@@ -93,7 +93,7 @@ void searchname(product *p,int count){
         if(p[i].price==-1) continue;
         if(strstr(p[i].name,na)){
             printf("%2d",i+1);
-            readMenu(p[i]);
+            readProduct(p[i]);
             n++;
 
         }
@@ -121,7 +121,7 @@ void searchstar(product *p,int count){
 }
 void searchprice(product *p,int count){
 	int i;
-    int na[100];
+    int na;
     printf("검색할 가격은?");
     scanf("%d",&na);
 
