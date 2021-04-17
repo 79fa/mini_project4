@@ -96,11 +96,46 @@ void searchname(product *p[],int count){
 
         }
     }
-    if (count==0) printf("검색된 데이터 없음");
+    if (n==0) printf("검색된 데이터 없음");
 
 }
+void searchstar(product *p[],int count){
+	int i;
+    int na;
+    printf("검색할 별점은?");
+    scanf("%d",&na);
 
-	
+    int n=0;
+    for(i=0;i<count;i++){
+        if(p[i].price==-1) continue;
+        if(p[i].star==na){
+            printf("%2d",i+1);
+            readProduct(p[i]);
+            n++;
+
+        }
+    }
+    if (count==0) printf("검색된 데이터 없음");
+}
+void searchprice(product *p[],int count){
+	int i;
+    int na[100];
+    printf("검색할 가격은?");
+    scanf("%d",&na);
+
+    int n=0;
+    for(i=0;i<count;i++){
+        if(p[i].price==-1) continue;
+        if(p[i].price==na){
+            printf("%2d",i+1);
+            readProduct(p[i]);//
+            n++;
+
+        }
+    }
+    if (count==0) printf("검색된 데이터 없음");
+}
+
 	
 	//입력된 값들을 파일에 저장한다.
 //CRUD     creat  read u(수정)
