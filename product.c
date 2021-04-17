@@ -77,12 +77,12 @@ void savedata(product *p,int count){
 
     for(i=0;i<count;i++){
         if (p[i].gram!=-1){
-            fprintf(fp,"%s %d %d %d %d %d\n",p[i].name,p[i].gram,p[i].price,p[i].star,p[i].num_star);
+            fprintf(fp,"%s %d %d %d %d\n",p[i].name,p[i].gram,p[i].price,p[i].star,p[i].num_star);
         }
     }
     fclose(fp);
 }	
-void searchname(product *p[],int count){
+void searchname(product *p,int count){
     int i;
     char na[100];
     printf("검색할 이름?");
@@ -101,7 +101,7 @@ void searchname(product *p[],int count){
     if (n==0) printf("검색된 데이터 없음");
 
 }
-void searchstar(product *p[],int count){
+void searchstar(product *p,int count){
 	int i;
     int na;
     printf("검색할 별점은?");
@@ -119,7 +119,7 @@ void searchstar(product *p[],int count){
     }
     if (count==0) printf("검색된 데이터 없음");
 }
-void searchprice(product *p[],int count){
+void searchprice(product *p,int count){
 	int i;
     int na[100];
     printf("검색할 가격은?");
