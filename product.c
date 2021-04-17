@@ -68,7 +68,22 @@ int readFile(product *p){
     return i;
 }
 
-void savedata(product *p,int count);//입력된 값들을 파일에 저장한다.
+void savedata(product *p,int count){
+	int i;
+    	FILE *fp;
+    	fp=fopen("product.txt","wt");
+
+    for(i=0;i<n;i++){
+        if (p[i].gram!=-1){
+            fprintf(fp,"%s %d %d %d %d %d\n",p[i].name,p[i].gram,p[i].price,p[i].star,p[i].num_star);
+        }
+    }
+    fclose(fp);
+}	
+	
+	
+	
+	//입력된 값들을 파일에 저장한다.
 //CRUD     creat  read u(수정)
 
 // CRUD만 수정하면 되는 것인지?
