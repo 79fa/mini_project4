@@ -17,6 +17,8 @@ int main(){
 		printf("\n2.update");
 		printf("\n3.read");
 		printf("\n4.delete");
+		printf("\n5.save file");
+		printf("\n6.search");
 		printf("\n0.종료");
 		printf("\n원하는 메뉴는?");
 		scanf("%d",&menu);
@@ -54,8 +56,22 @@ int main(){
 			scanf("%d",&num);
 			delProduct(&p[num-1]);
 			count--;
+		
 		}
-
+		else if(menu==5){
+			savedata(p,index);
+		}
+		else if(menu==6){
+			int cho;
+			printf("무엇으로 검색하실 건가요?(1:이름 2:별점 3:가격)");
+			scanf("%d",&cho);
+			if(cho==1)
+				searchname(p,index);
+			else if(cho==2)
+				searchstar(p,index);
+			else 
+				searchprice(p,index);
+				
 		printf("\n");
 
  /*       addProduct(p);//더하고
