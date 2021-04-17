@@ -46,6 +46,29 @@ void delProduct(product *p){
 	printf("삭제됨!\n");	
 
 }
+int readFile(product *p){
+	FILE *fp;
+    int i;
+
+    fp=fopen("product.txt","rt");
+    if(fp==NULL){
+        printf("파일없음");
+        return 0;
+    }
+    for(i=0;i<100;i++){
+
+        fscanf(fp," %[^\n]",p[i].name);
+        fscanf(fp,"%d %d %d %d",&p[i].gram,&p[i].price,&p[i].star,&p[i].num_star);
+        if (feof(fp)) break;
+    }
+
+    fclose(fp);
+    printf("=> 로딩성공!\n");
+
+    return i;
+}
+
+void savedata(product *p,int count);//입력된 값들을 파일에 저장한다.
 //CRUD     creat  read u(수정)
 
 // CRUD만 수정하면 되는 것인지?
