@@ -59,9 +59,9 @@ int readFile(product *p){
     }
     for(i=0;i<100;i++){
 
-        if (feof(fp)) break;
         fscanf(fp," %s",p[i].name);
         fscanf(fp,"%d %d %d %d",&p[i].gram,&p[i].price,&p[i].star,&p[i].num_star);
+        if (feof(fp)) break;
     }
 
     fclose(fp);
