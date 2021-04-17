@@ -71,7 +71,7 @@ int main(){
 				searchstar(p,index);
 			else 
 				searchprice(p,index);
-				
+		}		
 		printf("\n");
 
  /*       addProduct(p);//더하고
